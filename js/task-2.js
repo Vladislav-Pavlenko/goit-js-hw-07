@@ -20,6 +20,7 @@ const imgString = images.map((item) => {
   const itemImg = document.createElement("img");
   itemImg.src = item.url;
   itemImg.alt = item.alt;
+  itemImg.width = 360;
   itemImg.height = 360;
   galleryItem.append(itemImg);
   return galleryItem;

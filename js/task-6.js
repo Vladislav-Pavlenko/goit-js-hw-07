@@ -8,13 +8,14 @@ buttonDestroy.classList.add("destroy");
 
 buttonCreate.addEventListener("click", (event) => {
   if (input.value < 1 || input.value > 100) {
-    null;
+    return;
   } else {
     createBoxes(input.value);
   }
 });
 
 const createBoxes = (amount) => {
+  destroyBoxes();
   const array = [];
   for (let i = 0; i < amount; i++) {
     const divEl = document.createElement("div");
@@ -27,6 +28,7 @@ const createBoxes = (amount) => {
 };
 const destroyBoxes = () => {
   boxesContainer.innerHTML = "";
+  input.value = "";
 };
 
 buttonDestroy.addEventListener("click", destroyBoxes);
